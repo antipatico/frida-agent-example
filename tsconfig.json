@@ -5,6 +5,9 @@
     "allowJs": true,
     "noEmit": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "plugins": [{
+      "name": "frida-tsplugin"
+    }]
   }
 }

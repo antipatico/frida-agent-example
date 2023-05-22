@@ -7,12 +7,14 @@ header
     .writeU64(uint64("0x1122334455667788"));
 log(hexdump(header.readByteArray(16) as ArrayBuffer, { ansi: true }));
 
+/*
 Process.getModuleByName("libSystem.B.dylib")
     .enumerateExports()
     .slice(0, 16)
     .forEach((exp, index) => {
         log(`export ${index}: ${exp.name}`);
     });
+*/
 
 Interceptor.attach(Module.getExportByName(null, "open"), {
     onEnter(args) {
@@ -20,3 +22,8 @@ Interceptor.attach(Module.getExportByName(null, "open"), {
         log(`open() path="${path}"`);
     }
 });
+
+Java.perform(function() {
+    let jstring = Java.use("java.lang.String");
+    // TIP: Type in  "jstring." to check if frida-tsplugin works!
+})

@@ -13,5 +13,9 @@
     "@types/frida-gum": "^18.1.0",
     "@types/node": "^18.0.6",
     "frida-compile": "^15.0.8"
+  },
+  "dependencies": {
+    "typescript": "^5.0.4",
+    "frida-tsplugin": "file:~/tools/frida-tsplugin"
   }
 }
